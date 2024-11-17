@@ -94,4 +94,53 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        String toStringName;
+        String toStringEmployer;
+        String toStringLocation;
+        String toStringPositionType;
+        String toStringCoreCompetency;
+
+        if (name.isEmpty()) {
+            toStringName = "Data not available";
+        } else {
+            toStringName = name;
+        }
+
+        if (employer.equals("")) {
+            toStringEmployer = "Data not available";
+        } else {
+            toStringEmployer = String.valueOf(employer);
+        }
+
+        if (location.equals("")) {
+            toStringLocation = "Data not available";
+        } else {
+            toStringLocation = String.valueOf(location);
+        }
+
+        if (positionType.equals("")) {
+            toStringPositionType = "Data not available";
+        } else {
+            toStringPositionType = String.valueOf(positionType);
+        }
+
+        if (coreCompetency.equals("")) {
+            toStringCoreCompetency = "Data not available";
+        } else {
+            toStringCoreCompetency = String.valueOf(coreCompetency);
+        }
+
+        String string = System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + toStringName + System.lineSeparator() +
+                "Employer: " + toStringEmployer + System.lineSeparator() +
+                "Location: " + toStringLocation+ System.lineSeparator() +
+                "Position Type: " + toStringPositionType + System.lineSeparator() +
+                "Core Competency: " + toStringCoreCompetency + System.lineSeparator();
+
+        return string;
+    }
 }
