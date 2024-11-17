@@ -3,7 +3,7 @@ package org.launchcode.techjobs.oo;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Job {
+public class Job extends JobField{
 
     private int id;
     private static int nextId = 1;
@@ -97,50 +97,33 @@ public class Job {
 
     @Override
     public String toString() {
-        String toStringName;
-        String toStringEmployer;
-        String toStringLocation;
-        String toStringPositionType;
-        String toStringCoreCompetency;
 
         if (name.isEmpty()) {
-            toStringName = "Data not available";
-        } else {
-            toStringName = name;
+            name = "Data not available";
         }
 
-        if (employer.equals("")) {
-            toStringEmployer = "Data not available";
-        } else {
-            toStringEmployer = String.valueOf(employer);
+        if (employer.getValue().isEmpty()) {
+            employer.setValue("Data not available");
         }
 
-        if (location.equals("")) {
-            toStringLocation = "Data not available";
-        } else {
-            toStringLocation = String.valueOf(location);
+        if (location.getValue().equals("")) {
+            location.setValue("Data not available");
         }
 
-        if (positionType.equals("")) {
-            toStringPositionType = "Data not available";
-        } else {
-            toStringPositionType = String.valueOf(positionType);
+        if (positionType.getValue().equals("")) {
+            positionType.setValue("Data not available");
         }
 
-        if (coreCompetency.equals("")) {
-            toStringCoreCompetency = "Data not available";
-        } else {
-            toStringCoreCompetency = String.valueOf(coreCompetency);
+        if (coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue("Data not available");
         }
 
-        String string = System.lineSeparator() +
+        return System.lineSeparator() +
                 "ID: " + id + System.lineSeparator() +
-                "Name: " + toStringName + System.lineSeparator() +
-                "Employer: " + toStringEmployer + System.lineSeparator() +
-                "Location: " + toStringLocation+ System.lineSeparator() +
-                "Position Type: " + toStringPositionType + System.lineSeparator() +
-                "Core Competency: " + toStringCoreCompetency + System.lineSeparator();
-
-        return string;
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "Position Type: " + positionType + System.lineSeparator() +
+                "Core Competency: " + coreCompetency + System.lineSeparator();
     }
 }
