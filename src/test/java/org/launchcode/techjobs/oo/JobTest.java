@@ -41,15 +41,16 @@ public class JobTest {
         assertFalse(testJob1.equals(testJob2));
     }
     //toString() cannot be static or Job is angry
-//    @Test
-//    public void testToStringStartsAndEndsWithNewLine() {
-//        Job testJob1 = new Job("Product tester",
-//                new Employer("ACME"),
-//                new Location("Desert"),
-//                new PositionType("Quality control"),
-//                new CoreCompetency("Persistence"));
-//        assertTrue(Job.toString().startsWith(System.lineSeparator()));
-//    }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job testJob1 = new Job("Product tester",
+                new Employer("ACME"),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        assertTrue(testJob1.toString().startsWith(System.lineSeparator()));
+        assertTrue(testJob1.toString().endsWith(System.lineSeparator()));
+    }
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job testJob1 = new Job("Product tester",
