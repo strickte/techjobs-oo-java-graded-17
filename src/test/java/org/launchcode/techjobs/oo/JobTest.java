@@ -59,7 +59,7 @@ public class JobTest {
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
         assertEquals(System.lineSeparator() +
-                "ID: 4" + System.lineSeparator() +
+                "ID: " + testJob1.getId() + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
                 "Employer: ACME" + System.lineSeparator() +
                 "Location: Desert" + System.lineSeparator() +
@@ -76,7 +76,7 @@ public class JobTest {
                 new PositionType(""),
                 new CoreCompetency(""));
         assertEquals(System.lineSeparator() +
-                "ID: 3" + System.lineSeparator() +
+                "ID: " + testJob1.getId() + System.lineSeparator() +
                 "Name: Data not available" + System.lineSeparator() +
                 "Employer: Data not available" + System.lineSeparator() +
                 "Location: Data not available" + System.lineSeparator() +
